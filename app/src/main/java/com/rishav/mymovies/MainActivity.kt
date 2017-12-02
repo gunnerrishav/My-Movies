@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Movies>?, response: Response<Movies>) {
                 if (response.isSuccessful){
                     val movies = response.body()
-                    if (movies != null && movies.results!= null) {
-                        Log.d("title", movies.results[5].title)
-                        textTitleStatic.text = movies.results[2].title
-                    }
+//                    if (movies != null && movies.results!= null) {
+//                        Log.d("title", movies.results[5].title)
+//                        textTitleStatic.text = movies.results[2].title
+//                    }
 
                 }
             }

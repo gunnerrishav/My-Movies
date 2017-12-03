@@ -1,50 +1,53 @@
 package com.rishav.mymovies.model
 
 import com.google.gson.annotations.SerializedName
+import io.realm.RealmList
+import io.realm.RealmObject
 
 /**
  * Created by Rishab on 12/1/2017.
  */
-data class Results(
+
+open class Results : RealmObject(){
         @SerializedName("vote_count")
-        val voteCount: Int?,
+        var voteCount: Int? = null
 
         @SerializedName("id")
-        val id: Int?,
+        var id: Int? = null
 
         @SerializedName("video")
-        val video: Boolean?,
+        var video: Boolean? = null
 
         @SerializedName("vote_average")
-        val voteAverage: Float?,
+        var voteAverage: Float? = null
 
         @SerializedName("title")
-        val title: String?,
+        var title: String? = null
 
         @SerializedName("popularity")
-        val popularity: Float?,
+        var popularity: Float? = null
 
         @SerializedName("poster_path")
-        val posterPath: String?,
+        var posterPath: String? = null
 
         @SerializedName("original_language")
-        val originalLanguage: String?,
+        var originalLanguage: String? = null
 
         @SerializedName("original_title")
-        val originalTitle: String?,
+        var originalTitle: String? = null
 
-        @SerializedName("genre_ids")
-        val genreIds: List<Int>?,
+//        @SerializedName("genre_ids")
+//        var genreIds: RealmList<Int>? = null
 
         @SerializedName("backdrop_path")
-        val backdropPath: String?,
+        var backdropPath: String? = null
 
         @SerializedName("adult")
-        val adult: Boolean?,
+        var adult: Boolean? = null
 
         @SerializedName("overview")
-        val overview: String?,
+        var overview: String? = null
 
         @SerializedName("release_date")
-        val releaseDate: String?
-)
+        var releaseDate: String? = null
+}

@@ -1,23 +1,46 @@
 package com.rishav.mymovies.model
 
 import com.google.gson.annotations.SerializedName
+import io.realm.RealmList
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
 
 /**
  * Created by Rishab on 12/1/2017.
  */
-data class Movies(
+
+//data class Movies(
+//        @SerializedName("results")
+//        var results: List<Results>?,
+//
+//        @SerializedName("page")
+//        var page: Int?,
+//
+//        @SerializedName("total_results")
+//        var totalResults: Int?,
+//
+//        @SerializedName("dates")
+//        var dates: Dates?,
+//
+//        @SerializedName("total_pages")
+//        var totalPages: Int?
+//)
+
+
+open class Movies: RealmObject() {
         @SerializedName("results")
-        val results: List<Results>?,
+        var results: RealmList<Results>? = null
 
         @SerializedName("page")
-        val page: Int?,
+        var page: Int? = null
 
         @SerializedName("total_results")
-        val totalResults: Int?,
+        var totalResults: Int? = null
 
         @SerializedName("dates")
-        val dates: Dates?,
+        var dates: Dates? = null
 
+        @PrimaryKey
         @SerializedName("total_pages")
-        val totalPages: Int?
-)
+        var totalPages: Int? = null
+}

@@ -39,7 +39,7 @@ class PopularActivity : AppCompatActivity() {
         recyclerviewPopular.adapter = popularAdapter
     }
 
-    fun getData() {
+    private fun getData() {
         val retrofitHelper = RetrofitHelper()
 
         val popularCall = retrofitHelper.getApiService().getPopularList()
@@ -48,6 +48,8 @@ class PopularActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val popular = response.body()
                     val resultsList: List<Results>? = popular?.results
+                    val totalPages: Int? = popular?.totalResults
+                    Log.d("test", totalPages.toString())
 //                    if (popularList != null) {
 //                        Log.e("Test", popularList[5].title)
 //                    }
